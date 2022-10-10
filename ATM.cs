@@ -29,6 +29,19 @@ namespace ATMLabJT
             }
         }
 
+        public void AddWithdraw(string name, int WithdrawChange) //function to add or subtract(?) funds from each account
+        {
+            if (Accounts.Where(a => a.Name == name).Count() > 0)
+            {
+                Account Account = Accounts.Where(a => a.Name == name).First();
+                Account.Balance += WithdrawChange;
+            }
+            else
+            {
+                Console.WriteLine("No Account Found with that name");
+            }
+        }
+
         public void AddAccount(string newName, string newPass)
         {
             Accounts.Add(new Account(newName, newPass, 0));

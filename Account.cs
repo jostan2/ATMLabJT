@@ -13,7 +13,7 @@ namespace ATMLabJT
 
         public string Password { get; set; }
 
-        public int Balance { get; set; }
+        public double Balance { get; set; }
 
 
         public Account(string Name, string Password, int Balance)
@@ -23,6 +23,9 @@ namespace ATMLabJT
             this.Balance = Balance;
         }
 
-        
+        public double Balance2()
+        {
+            return Balance;
+        }
     }
 }
